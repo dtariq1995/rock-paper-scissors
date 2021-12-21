@@ -1,17 +1,35 @@
 body {
-
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .buttons {
     margin: 10px;
     display: flex;
-    gap: 15px;
+    gap: 30px;
     align-items: center;
     justify-content: center;
 }
 
 .selectionButton {
-    height: 400px;
-    width: 400px;
+    height: 250px;
+    width: 250px;
     font-size: 48px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 143, 65);
+}
+
+footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: rgb(20, 143, 65);
 }

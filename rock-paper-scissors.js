@@ -27,46 +27,36 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
-
-// Loop for a total of 5 rounds 
-function game() {
-
-    let playerSelection;
-
-    let buttons = document.querySelectorAll('button');
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            playerSelection = button.innerText.toLowerCase();
-    
-            console.log(playerSelection);
-            playRound(playerSelection, computerPlay());
-            
-        });
-    });
-}
-
+// Declare winner or loser after 5 wins or losses reached
 function declareWinner() {
     
-    if (wins > losses) {
+    if (wins === 5) {
         console.log("You win!!");
     }
-    if (losses > wins) {
+    if (losses === 5) {
         console.log("You suck and are a loser!!");
     }
-    if (wins == losses) {
-        console.log("The game is tied, you didn't lose, but you didn't win either!");
-    }
 }
+
+
+
 
 let wins = 0;
 let losses = 0;
 let ties = 0;
 
-for (let i = 0; i < 5; i++) {
-    game();
-}
+let playerSelection;
 
+let buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.innerText.toLowerCase();
+
+        console.log(playerSelection);
+        playRound(playerSelection, computerPlay());
+        declareWinner();
+    });
+});
 
  
 
