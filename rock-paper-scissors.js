@@ -32,12 +32,18 @@ function playRound(playerSelection, computerSelection) {
 // Loop for a total of 5 rounds 
 function game() {
 
-    for (let i = 0; i < 5; i++) {
+    let playerSelection;
 
-        let computerSelection = computerPlay();
-        let playerSelection = prompt("Make a selection: 'Paper', 'Rock', or 'Scissors'").toLowerCase();
-        playRound(playerSelection,computerSelection);
-    }
+    let buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            playerSelection = button.innerText.toLowerCase();
+    
+            console.log(playerSelection);
+            playRound(playerSelection, computerPlay());
+            
+        });
+    });
 }
 
 function declareWinner() {
@@ -56,5 +62,11 @@ function declareWinner() {
 let wins = 0;
 let losses = 0;
 let ties = 0;
-game();
-declareWinner();
+
+for (let i = 0; i < 5; i++) {
+    game();
+}
+
+
+ 
+

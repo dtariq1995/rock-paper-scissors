@@ -1,0 +1,17 @@
+body {
+
+}
+
+.buttons {
+    margin: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectionButton {
+    height: 400px;
+    width: 400px;
+    font-size: 48px;
+}
