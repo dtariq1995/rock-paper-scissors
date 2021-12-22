@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    flex-shrink: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
+main {
+    flex-grow: 1;
+    background-color: rgb(208, 208, 208);
+}
+
+.header-text {
+    font-size: 64px;
+    color: white;
+    margin: 15px 2px;
 }
 
 .buttons {
@@ -18,18 +33,38 @@ body {
     font-size: 48px;
 }
 
-.header {
+header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(20, 143, 65);
+    background-color: rgb(20, 94, 143);
 }
 
 footer {
     display: flex;
-    text-align: center;
+    align-items: center;
     justify-content: center;
     bottom: 0;
-    background-color: rgb(20, 143, 65);
+    background-color: rgb(20, 94, 143);
+    color: white;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreboard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-subtext {
+    text-align: center;
 }

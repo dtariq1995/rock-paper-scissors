@@ -9,20 +9,22 @@ function computerPlay() {
 // Play a round of rock paper scissors
 function playRound(playerSelection, computerSelection) {
 
+    const text = document.querySelector('.display-text');
+
     if (computerSelection == playerSelection) {
-        console.log("It's a tie! You chose " + playerSelection + " and the computer chose " + computerSelection + "!!");
+        text.textContent = "It's a tie! You chose " + playerSelection + " and the computer chose " + computerSelection + "!!";
         return ties += 1;
     }
 
     if ((playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "scissors" && computerSelection == "rock") ||
         (playerSelection == "paper" && computerSelection == "scissors")) {
-            console.log("You lost! " + computerSelection + " beats " + playerSelection + "!!");
+            text.textContent = "You lost! " + computerSelection + " beats " + playerSelection + "!!";
         return losses +=1;
         }
 
     else {
-        console.log("You won! " + playerSelection + " beats " + computerSelection + "!!");
+        text.textContent = "You won! " + playerSelection + " beats " + computerSelection + "!!";
         return wins +=1;
     }
 }
@@ -31,10 +33,10 @@ function playRound(playerSelection, computerSelection) {
 function declareWinner() {
     
     if (wins === 5) {
-        console.log("You win!!");
+        alert("You win!!");
     }
     if (losses === 5) {
-        console.log("You suck and are a loser!!");
+        alert("You suck and are a loser!!");
     }
 }
 
@@ -51,9 +53,11 @@ let buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerSelection = button.innerText.toLowerCase();
-
-        console.log(playerSelection);
         playRound(playerSelection, computerPlay());
+        const userScore = document.querySelector('.user-score');
+        userScore.textContent = "You: " + wins;
+        const cpuScore = document.querySelector('.cpu-score');
+        cpuScore.textContent = "Computer: " + losses;
         declareWinner();
     });
 });
