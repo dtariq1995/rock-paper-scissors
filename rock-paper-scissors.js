@@ -35,7 +35,7 @@ function declareWinner() {
     const text = document.querySelector('.display-text');
 
     if (wins === 5) {
-        text.textContent = "You won! Looks like Man beats machine yet again.";
+        text.textContent = "You won! Looks like Man beats machine yet again └(^o^ )Ｘ( ^o^)┘";
         text.style.color = "green";
     }
     if (losses === 5) {
