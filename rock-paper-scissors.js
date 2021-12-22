@@ -52,7 +52,7 @@ let playerSelection;
 let buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playerSelection = button.innerText.toLowerCase();
+        playerSelection = button.id.toLowerCase();
         playRound(playerSelection, computerPlay());
         const userScore = document.querySelector('.user-score');
         userScore.textContent = "You: " + wins;
