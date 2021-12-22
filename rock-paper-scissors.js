@@ -33,10 +33,14 @@ function playRound(playerSelection, computerSelection) {
 function declareWinner() {
     
     if (wins === 5) {
-        alert("You win!!");
+        alert("You won. Looks like Man beats machine yet again.");
+        wins = 0;
+        losses = 0;
     }
     if (losses === 5) {
-        alert("You suck and are a loser!!");
+        alert("It seems you're not very good at this. Maybe you should quit.");
+        wins = 0;
+        losses = 0;
     }
 }
 
@@ -54,11 +58,11 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerSelection = button.id.toLowerCase();
         playRound(playerSelection, computerPlay());
+        declareWinner();
         const userScore = document.querySelector('.user-score');
         userScore.textContent = "You: " + wins;
         const cpuScore = document.querySelector('.cpu-score');
         cpuScore.textContent = "Computer: " + losses;
-        declareWinner();
     });
 });
 
