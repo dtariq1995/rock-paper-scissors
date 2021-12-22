@@ -32,17 +32,23 @@ function playRound(playerSelection, computerSelection) {
 // Declare winner or loser after 5 wins or losses reached
 function declareWinner() {
     
+    const text = document.querySelector('.display-text');
+
     if (wins === 5) {
-        alert("You won. Looks like Man beats machine yet again.");
-        wins = 0;
-        losses = 0;
+        text.textContent = "You won! Looks like Man beats machine yet again.";
+        text.style.color = "green";
     }
     if (losses === 5) {
-        alert("It seems you're not very good at this. Maybe you should quit.");
+        text.textContent = "You lose. It seems you're not very good at this. Maybe you should quit ¯\\(°_o)/¯";
+        text.style.color = "red";
+    }
+    if (wins === 5 || losses === 5) {
+        setTimeout(function() { text.style.transition = "1.3s"; text.style.color = "black"; text.textContent = "Play again. Click above to make your selection";}, 2000)
         wins = 0;
         losses = 0;
     }
 }
+
 
 
 
