@@ -43,8 +43,8 @@ function declareWinner() {
         text.style.color = "red";
     }
     if (wins === 5 || losses === 5) {
-        setTimeout(function() { text.style.transition = "1.3s"; text.style.color = "black"; text.textContent = "Play again. Click above to make your selection";}, 2000)
-        wins = 0;
+        setTimeout(function() { text.style.transition = "2.0s"; text.style.color = "black"; text.textContent = "Play again. Click above to make your selection";}, 4000)
+        wins = 0; 
         losses = 0;
     }
 }
